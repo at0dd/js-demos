@@ -30,12 +30,12 @@ var loadHandler = function() {
         markerArray[h][4] = dataObject.photoset.photo[h].title + '<br /><img src="' + dataObject.photoset.photo[h].url_s + '" />'; //Set InfoWindow
         //}
     }
-}
+};
 
 // ---- Flickr API ----
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("load", loadHandler);
-xhr.open('get', 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=API_KEY&photoset_id=72157618530173650&extras=url_s%2Cgeo&format=json&nojsoncallback=1', false);
+xhr.open('get', 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=e7900ae82cd69bca66b983923cb5c333&photoset_id=72157618530173650&extras=url_s%2Cgeo&format=json&nojsoncallback=1', false);
 xhr.send();
 
 function setMarkers(map, markers) {

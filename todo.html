@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <title>Alex Todd | To Do List</title>
+    <meta name="description" content="Alex Todd To Do List" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><a href="index.html">Javascript Demos</a></h1>
+                <p>Alex Todd</p>
+                <p><a href="https://github.com/at0dd/js-demos">GitHub Repository</a> | <a href="http://atodd.io" target="_blank">Alex's Portfolio</a></p>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>To Do List</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="field" id="todo">
+                    <input type="text" id="todoInput" equired placeholder="To Do" />
+                    <label>To Do:</label>
+                    <button id="addItem" type="submit">Add</button>
+                    <button id="removeAll" type="submit">Remove All</button>
+                </div>
+
+                <div id="errorDiv">Please enter something to add to your list.</div>
+
+                <ul id="unList"></ul>
+
+                <script src="js/todo.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

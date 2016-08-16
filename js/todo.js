@@ -16,13 +16,13 @@ var renderTodos = function() {
         liTag.setAttribute("id", "itemli" + i);
         var ButtonTag = document.createElement("button");
         ButtonTag.setAttribute("id", "removeSingle" + i);
-        ButtonTag.innerHTML = "Remove"
+        ButtonTag.innerHTML = "Remove";
         uList.appendChild(liTag);
         liTag.appendChild(ButtonTag);
         var removeSingleButton = document.getElementById("removeSingle" + i);
         removeSingleButton.addEventListener("click", removeTodo);
     }
-}
+};
 
 //Adds an Item
 var addTodo = function(event) {
@@ -33,7 +33,7 @@ var addTodo = function(event) {
     } else {
         errorMsg.setAttribute("style", "display:block");
     }
-}
+};
 
 //Removes a Single Item
 var removeTodo = function(event) {
@@ -44,20 +44,20 @@ var removeTodo = function(event) {
     //Removes Item from Array
     listArray.splice(buttonNum, 1);
     renderTodos();
-}
+};
 
 //Removes All Items
 var removeAll = function(event) {
     listArray.splice(0, listArray.length);
     renderTodos();
-}
+};
 
 //Pressing Enter Adds Item to List
 var enterPress = function(event) {
     if (event.keyCode == 13) {
-        addTodo()
+        addTodo();
     }
-}
+};
 
 //Event Listeners
 addButton.addEventListener("click", addTodo);
