@@ -30,7 +30,7 @@ var loadHandler = function() {
         markerArray[h][4] = dataObject.photoset.photo[h].title + '<br /><img src="' + dataObject.photoset.photo[h].url_s + '" />'; //Set InfoWindow
         //}
     }
-}
+};
 
 // ---- Flickr API ----
 var xhr = new XMLHttpRequest();

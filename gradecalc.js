@@ -31,11 +31,11 @@ var clearInputs = function() {
     pointsEarned.value = "";
     pointsPossible.value = "";
     errorMSG.setAttribute("style", "display:none;");
-}
+};
 
 // Only Allows Numbers for Specific Inputs
 function isNumberKey(evt) {
-    var charCode = (evt.which) ? evt.which : event.keyCode
+    var charCode = (evt.which) ? evt.which : event.keyCode;
     if (charCode > 31 && (charCode != 46 && (charCode < 48 || charCode > 57)))
         return false;
     return true;
@@ -45,7 +45,7 @@ function isNumberKey(evt) {
 var renderAssignments = function() {
     //Clears some stuff...
     clearInputs();
-    tBody.innerHTML = "<tr><th>Assignment</th><th>Points Earned</th><th>Points Total</th><th>Percent</th><th>Remove/Edit</th></tr>"
+    tBody.innerHTML = "<tr><th>Assignment</th><th>Points Earned</th><th>Points Total</th><th>Percent</th><th>Remove/Edit</th></tr>";
         //Setup for Overall Grade
     var overallEarned = 0;
     var overallPossible = 0;
@@ -80,7 +80,7 @@ var renderAssignments = function() {
         overallRoundedPercent = 0;
     }
     overallGrade.innerHTML = "Overall Grade: " + overallRoundedPercent + "%";
-}
+};
 
 var newAssignmentFunction = function(event) {
     //Hide Assignments List and Show Add Assignment
@@ -89,11 +89,11 @@ var newAssignmentFunction = function(event) {
     overallGrade.setAttribute("style", "display:none;");
     mainButtons.setAttribute("style", "display:none;");
     document.addEventListener("keydown", enterPress);
-}
+};
 
 var addAssignmentFunction = function(event) {
     //If everything is filled out...
-    if (assignmentName.value.length >= 1 && pointsEarned.value.length >= 1 && pointsPossible.value.length >= 1 && pointsPossible.value != 0) {
+    if (assignmentName.value.length >= 1 && pointsEarned.value.length >= 1 && pointsPossible.value.length >= 1 && pointsPossible.value !== 0) {
         //Add Assignment to Array
         Assignments.push({
             name: assignmentName.value,
@@ -111,7 +111,7 @@ var addAssignmentFunction = function(event) {
     } else {
         errorMSG.setAttribute("style", "display:block;");
     }
-}
+};
 
 cancelAddFunction = function(event) {
     entryBoxes.setAttribute("style", "display:none;");
@@ -119,13 +119,13 @@ cancelAddFunction = function(event) {
     overallGrade.setAttribute("style", "display:block;");
     mainButtons.setAttribute("style", "display:block;");
     clearInputs();
-}
+};
 
 // Removes all assignments from the list
 removeAllFunction = function() {
     Assignments = [];
     renderAssignments();
-}
+};
 
 //Removes a Single Item
 var removeSingle = function() {
@@ -136,7 +136,7 @@ var removeSingle = function() {
     //Removes Item from Array
     Assignments.splice(buttonNum, 1);
     renderAssignments();
-}
+};
 
 //Edits an Assignment
 var editSingle = function() {
@@ -152,14 +152,14 @@ var editSingle = function() {
     //Shows Input Boxes
     newAssignmentFunction();
     Assignments.splice(buttonNum, 1);
-}
+};
 
 // Pressing Enter Adds Item to List
 var enterPress = function(event) {
     if (event.keyCode == 13) {
         addAssignmentFunction();
     }
-}
+};
 
 // ------------ Event Listeners ------------ //
 newAssignment.addEventListener("click", newAssignmentFunction);
